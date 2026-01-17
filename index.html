@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunil Poudel CV</title>
+    <style>
+        :root {
+            --bg-dark: #222222;
+            --accent-green: #76b852;
+            --text-white: #ffffff;
+            --text-gray: #333333;
+        }
+
+        /* Essential Reset */
+        * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
+        body { font-family: 'Roboto Mono','Helvetica', 'Arial', monospace; margin: 0; padding: 0; background: #f0f0f0; }
+
+        /* Page Container - Removed fixed height for flexibility */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 10px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Download Button Wrapper */
+        .no-print { text-align: center; padding: 15px; background: #f0f0f0; }
+        .btn { 
+            background: var(--bg-dark); 
+            color: white; 
+            padding: 12px 24px; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .btn:hover { background: var(--accent-green); }
+
+        /* Header - Solid Black Background */
+        header {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .name-title h1 { margin: 0; font-size: 40px; letter-spacing: 6px; text-transform: uppercase; }
+        .name-title p { margin: 10px 0 0; font-size: 14px; letter-spacing: 3px; color: #ccc; text-transform: uppercase; }
+        .contact-info { text-align: right; font-size: 12px; line-height: 1.8; }
+
+        .contact-container {
+            background-color: #222222; /* Matches the dark header background */
+            display: inline-block;
+            font-family: 'Courier New', Courier, monospace; /* Matches the monospaced style in the image */
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 13px; /* Matches the visual scale */
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon {
+            width: 15px;
+            margin-right: 10px; /* Exact spacing between icon and text */
+            align-content: center;
+            justify-content: center;
+        }
+
+        .contact-link {
+            color: #ffffff;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            letter-spacing: 1px;
+        }
+
+        .contact-text {
+            letter-spacing: 1px;
+        }
+
+        /* Skills Bar - Green Accent and Dark Grey */
+        .info-bar {
+            background-color: #333;
+            color: white;
+            padding: 20px 40px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 30px;
+            border-top: 5px solid var(--accent-green);
+        }
+        .info-bar h2 { 
+            font-size: 14px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            /* border-bottom: 1px solid #555;  */
+            margin-bottom: 12px; 
+            padding-bottom: 5px; 
+        }
+        .info-bar ul, .info-bar table { 
+            font-size: 12px; 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            width: 100%; 
+        }
+        .info-bar table td:last-child { text-align: right; }
+        .info-bar li { margin-bottom: 5px; }
+
+        /* Main Content */
+        main { padding: 30px 40px; flex-grow: 1; }
+        section { margin-bottom: 30px; }
+        
+        .section-header { 
+            text-align: center; 
+            text-transform: uppercase; 
+            letter-spacing: 5px; 
+            font-size: 16px; 
+            color: var(--text-gray); 
+            margin-bottom: 8px; 
+        }
+        .divider { 
+            width: 80%; 
+            height: 2px; 
+            background: linear-gradient(to right, transparent, var(--accent-green), transparent); 
+            margin: 0 auto 15px; 
+        }
+
+        .profile-text { 
+            font-size: 13px; 
+            text-align: left; 
+            color: #555; 
+            line-height: 1.6; 
+        }
+
+        .exp-item { margin-bottom: 25px; }
+        .exp-row { 
+            display: flex; 
+            justify-content: space-between; 
+            font-size: 14px; 
+            text-transform: uppercase; 
+        }
+        .exp-summary { 
+            font-style: italic; 
+            font-size: 12px; 
+            color: #666; 
+            margin: 5px 0; 
+        }
+        .exp-list { font-size: 12px; padding-left: 20px; margin: 8px 0; }
+        .exp-list li { margin-bottom: 5px; }
+
+        /* Printing Specifics */
+        @media print {
+            .no-print { display: none; }
+            body { background: white; margin: 0; }
+            .page { 
+                margin: 0; 
+                border: none; 
+                box-shadow: none; 
+                width: 100%;
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="no-print">
+    <button class="btn" onclick="window.print()">DOWNLOAD AS PDF</button>
+</div>
+
+<div class="page">
+    <header>
+        <div class="name-title">
+            <h1>Sunil Poudel</h1>
+            <p>Lead Engineer | Architect | Tech Mentor</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-item">
+                <span class="icon" style="font-size: 30px;">&#9993;</span>
+                <a href="mailto:sunil15poudel@gmail.com" class="contact-link">sunil15poudel@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="icon">&#128222;</span>
+                <span class="contact-text">+977 9843023558</span>
+            </div>
+            <div class="contact-item">
+                <span class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 382 382" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#0077B7;" d="M347.445,0h24.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h212.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"></path> </g></svg></span>
+                <a href="https://linkedin.com/in/poudelsunil" class="contact-text contact-link">sunil-poudel</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="info-bar">
+        <div>
+            <h2>Key Skills</h2>
+            <ul>
+                <li>Full Stack Development</li>
+                <li>Architecture</li>
+                <li>Technical Leadership</li>
+                <li>Mentoring</li>
+                <li>People Management</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Tech Stack</h2>
+            <p style="font-size: 7px; margin-top: -10px; text-align: right; opacity: 0.6;">Years</p>
+            <table>
+                <tr><td>AWS</td><td>5</td></tr>
+                <tr><td>Go</td><td>5</td></tr>
+                <tr><td>Java</td><td>4</td></tr>
+                <tr><td>Node.js</td><td>7</td></tr>
+                <tr><td>MySQL / PostgreSQL</td><td>10 / 5</td></tr>
+                <tr><td>MongoDB</td><td>4</td></tr>
+                <tr><td>React</td><td>6</td></tr>
+            </table>
+        </div>
+        <div>
+            <h2>Personal Style</h2>
+            <ul>
+                <li>Analytical</li>
+                <li>Diligent</li>
+                <li>Proactive</li>
+                <li>Strong Communication</li>
+                <li>Quality Driven</li>
+                <li>Curious</li>
+                <li>Grasp Complex Ideas</li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <section>
+            <div class="section-header">Profile</div>
+            <div class="divider"></div>
+            <p class="profile-text">
+                A high-performing Lead Engineer & Architect with 10 years' of successful delivery across diverse tech stacks. Dedicated mentor with a history of developing and inspiring high-performing teams. Innovative leader driving process and tech stack improvements. Seeking a hands-on technical role with cross-team influence in a collaborative environment.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-header">Experience</div>
+            <div class="divider"></div>
+
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span>Lead Software Engineer | CloudFactory</span>
+                    <span>July 2023 - Present</span>
+                </div>
+                <p class="exp-summary">Reporting to Director of Engineering, leading and working cross-team. Responsibilities include architecture, design, coding, line management, Key achievements:</p>
+                <ul class="exp-list">
+                    <li>Led multiple domain teams to deliver critical features, including contact management and diverse payout systems for 10k+ workers.</li>
+                    <li>Architected and implemented a performance management system with real-time quality calculation, processing 1M+ requests daily.</li>
+                    <li>Actively drove agile processes, technical decision-making, and continuous improvement.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span>Senior Software Engineer | CloudFactory</span>
+                    <span>July 2022 - June 2023 </span>
+                </div>
+                <p class="exp-summary">Reporting to Head of Engineering, leading and working cross-team. Responsibilities include architecture, design, coding, Key achievements:</p>
+                <ul class="exp-list">
+                    <li>Designed and implemented architecture including Big Data and Data Warehousing.</li>
+                    <li>Prepared and delegated technical OKRs for upcoming quarters to drive project success.</li>
+                    <li>Guided team through high-standard product development and maintained coding standards.</li>
+                </ul>
+            </div>
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span>Freelance software engineer | Upwork: YellowQ, Greenplay</span>
+                    <span>Aug 2020 - July 2021</span>
+                </div>
+            </div> 
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span>Software Engineer | Citytech</span>
+                    <span>Jan 2019 - May 2020 </span>
+                </div>
+                <p class="exp-summary">Reporting to Lead Engineer, played a pivotal role in architecting a modern International Remittance Hub. Tasked with migrating core logic from a 15-year-old legacy system into a scalable microservices architecture. Key achievements:</p>
+                <ul class="exp-list">
+                    <li>Developed high-resiliency JavaEE Microservices using JAX-RS and CDI, focused on high-concurrency remittance processing.</li>
+                    <li>Architected a reusable integration boilerplate that automated entity onboarding, reducing manual effort by 13 story points per implementation.</li>
+                    <li>Streamlined global money transfers by integrating complex third-party payment gateways and digital wallet systems via RESTful APIs.</li>
+                    <li>Maintained a 90+% test-coverage standard by championing Test-Driven Development (TDD) with JUnit and Mockito.</li>
+                </ul>
+            </div>
+            <div class="exp-item">
+            </br></br>
+            </div>
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span>Co-founder / full stack software engineer | Thorangs Pvt. Ltd</span>
+                    <span>Dec 2017 - Jan 2019</span>
+                </div>
+            </div> 
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span>Java Developer | Smart Data Solutions</span>
+                    <span>Feb 2016 - Dec 2017</span>
+                </div>
+                <p class="exp-summary">Contributed to high-compliance Healthtech solutions for a US-based firm managing 20+ years of healthcare claims data. Owned the full-lifecycle development process from Statements of Work (SOW) to production monitoring and final client sign-off. Key achievements:</p>
+                
+                <ul class="exp-list">
+                    <li>Modernized a 14-year-old legacy insurance processing system, upgrading high-traffic 837 dental claim forms used by thousands of employees daily.</li>
+                    <li>Implemented a configurable scheduled reporting engine and comprehensive change history logs for HCFA, UB04, and CMS1500 forms.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">Education</div>
+            <div class="divider"></div>
+            <div class="exp-row">
+                <span>Bachelor of Engineering in Computer  |  Himalaya College of Engineering</span>
+                <span>2011 - 2015 </span>
+            </div>
+            <div class="exp-row" style="margin-top: 10px;">
+                <span>Diploma In Computer Engineering  |  IOE, Thapathali Campus</span>
+                <span>2008 - 2011 </span>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">Community</div>
+            <div class="divider"></div>
+            <div class="exp-row">
+                <span>Codarambha Hackfest by Sunway College (Mentor and Judge)</span>
+                <span>2025</span>
+            </div>
+            <div class="exp-row">
+                <span>Career Compass by NAS-IT (Speaker)</span>
+                <span>2025</span>
+            </div>
+            <div class="exp-row">
+                <span>Hackfest by NCIT, IdeaX by MBMC, Waste Hackathon by Khaalisisi (Mentor)</span>
+                <span>2024</span>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">AWARDS</div>
+            <div class="divider"></div>
+            <div class="exp-row">
+                <span>Bachelor of Engineering in Computer  |  Himalaya College of Engineering</span>
+                <span>2011 - 2015 </span>
+            </div>
+            <div class="exp-row" style="margin-top: 10px;">
+                <span>Diploma In Computer Engineering  |  IOE, Thapathali Campus</span>
+                <span>2008 - 2011 </span>
+            </div>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
